@@ -20,6 +20,5 @@ such as:
 
 ```Javascript
   const kokua = require("kokua");
-  let representor = kokua();
   let uberDoc = kokua(hyperDoc, kokua.mt('uber'));
 ```
