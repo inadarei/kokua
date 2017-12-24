@@ -8,8 +8,15 @@ in a flexible media type, purpose-designed for the task: [Hyper](http://hyperjso
 and automatically outputs messages in a variety of popular Hypermedia formats
 such as:
 
-1. HAL
-2. Siren
-3. Collection+JSON
-4. UBER
+1. HAL (application/hal+json)
+2. Siren (application/vnd.siren+json)
+3. Collection+JSON (application/vnd.collection+json)
+4. UBER (application/vnd.uber+json)
 5. etc.
+
+## Usage
+
+```Javascript
+  const kokua = require("kokua");
+  let uberDoc = kokua(hyperDoc, kokua.mt('uber'));
+```
