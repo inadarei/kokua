@@ -1,6 +1,6 @@
 {
   "name": "kokua",
-  "version" : "0.1.0",
+  "version": "0.1.0",
   "description": "Hypermedia Representor Using Hyper+JSON",
   "author": "Irakli Nadareishvili",
   "license": "MIT",
@@ -19,18 +19,45 @@
     "metalogger": "*"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "eslint": "^4.11.0",
-    "eslint-plugin-mocha": "^4.11.0",
-    "nyc": "11.4.1",
-    "mocha": "^4.0.0",
-    "nock": "^9.0.0",
-    "nodemon": "^1.14.2",
-    "should": "^13.0.0",
-    "sinon": "^4.1.0"
+    "ava": "^0.24.0",
+    "eslint": "^4.12.1",
+    "nyc": "^11.3.0"
   },
   "scripts": {
-    "test": "nyc mocha --bail test/ test/unit/",
-    "test-cov": "nyc cover node_modules/mocha/bin/_mocha -- --reporter dot test/ test/acceptance/"
+    "lint": "eslint lib test",
+    "test": "nyc ava test/**/*.js --verbose",
+    "test-cov": "nyc --check-coverage report test/",
+    "test:watch": "ava test/**/*.js --verbose --watch"
+  },
+  "nyc": {
+    "per-file": true,
+    "lines": [
+      75,
+      95
+    ],
+    "statements": [
+      75,
+      95
+    ],
+    "functions": [
+      75,
+      95
+    ],
+    "branches": [
+      75,
+      95
+    ],
+    "include": [
+      "lib/**/*.js"
+    ],
+    "reporter": [
+      "text-summary",
+      "text",
+      "lcov",
+      "clover",
+      "html"
+    ],
+    "all": true,
+    "report-dir": "./coverage"
   }
 }
