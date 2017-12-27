@@ -30,5 +30,23 @@ test('Curries', async t => {
     "other" : "lorem"
   };
   const halDocTwo = kokua (noCuriesHyper, kokua.mt('hal'));
-  t.deepEqual(noCuriesHyper, noCuriesHyper);
+  delete noCuriesHyper["h:head"];
+  t.deepEqual(halDocTwo, noCuriesHyper);
+});
+
+test('Top-Level H:refs', async t => {
+  const halDocTranslated = kokua(hyperDoc, kokua.mt('hal'));
+  t.deepEqual(halDoc._links.next, halDocTranslated._links.next);
+  t.deepEqual(halDoc._links.self, halDocTranslated._links.self);
+
+  const noHrefsHyper = {
+    "h:head" : {
+      "title" : "yeah"
+    },
+    "something": 23,
+    "other" : "lorem"
+  };
+  const halDocTwo = kokua (noHrefsHyper, kokua.mt('hal'));
+  delete noHrefsHyper["h:head"];
+  t.deepEqual(halDocTwo, noHrefsHyper);
 });
