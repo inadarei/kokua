@@ -38,10 +38,11 @@ test('constructor throws an error for unsupported media types', t => {
 
 test('constructor accepts strings and objects. Tanslates to basic HAL', t => {
   const testHyper = {
-    "body": {
-      "department": "North-East",
-      "budget": "500M USD"
-    }
+    "h:head" : {
+      "title" : "test departments"
+    },
+    "department": "North-East",
+    "budget": "500M USD"
   };
 
   const shouldHAL = {

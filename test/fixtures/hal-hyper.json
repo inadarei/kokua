@@ -1,44 +1,39 @@
 {
-  "head": {
-    "curies": [{"prefix": "ea", "uri": "http://example.com/docs/rels/"}],
-    "h:link": [
-      {"rel": ["self"], "uri": "/orders"},
-      {"rel": ["next"], "uri": "/orders?page=2"},
-      {
-        "rel": ["ea:find"],
-        "uri": "/orders{?id}",
-        "template": {"fields": {"id": {}}}
-      }
-    ]
+  "h:head": {
+    "curies": {"ea": "http://example.com/docs/rels/"}
   },
-  "body": {
-    "currentlyProcessing": 14,
-    "shippedToday": 20,
-    "ea:order": [
-      {
-        "h:link": [
-          {"rel": ["self"], "uri": "/orders/123"},
-          {"rel": ["ea:basket"], "uri": "/baskets/98712"},
-          {"rel": ["ea:customer"], "uri": "/customers/7809"}
-        ],
-        "total": 30,
-        "currency": "USD",
-        "status": "shipped"
+  "h:ref": {"self": "/orders", "next": "/orders?page=2"},
+  "h:link": [
+    {
+      "rel": ["ea:find"],
+      "uri": "/orders{?id}",
+      "template": {"fields": {"id": {}}}
+    },
+    {"rel": ["ea:admin"], "label": "Fred", "uri": "/admins/2"},
+    {"rel": ["ea:admin"], "label": "Kate", "uri": "/admins/5"}
+  ],
+  "currentlyProcessing": 14,
+  "shippedToday": 20,
+  "ea:order": [
+    {
+      "h:ref": {
+        "self": "/orders/123",
+        "ea:basket": "/baskets/98712",
+        "ea:customer": "/customers/7809"
       },
-      {
-        "h:link": [
-          {"rel": ["self"], "uri": "/orders/124"},
-          {"rel": ["ea:basket"], "uri": "/baskets/97213"},
-          {"rel": ["ea:customer"], "uri": "/customers/12369"}
-        ],
-        "total": 20,
-        "currency": "USD",
-        "status": "processing"
-      }
-    ],
-    "ea:admin": [
-      {"h:link": [{"uri": "/admins/2", "title": "Fred"}]},
-      {"h:link": [{"uri": "/admins/5", "title": "Kate"}]}
-    ]
-  }
+      "total": 30,
+      "currency": "USD",
+      "status": "shipped"
+    },
+    {
+      "h:ref": {
+        "self": "/orders/124",
+        "ea:basket": "/baskets/97213",
+        "ea:customer": "/customers/12369"
+      },
+      "total": 20,
+      "currency": "USD",
+      "status": "processing"
+    }
+  ]
 }
