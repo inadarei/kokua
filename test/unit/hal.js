@@ -21,4 +21,14 @@ test.skip('Full test', async t => {
 test('Curries', async t => {
   const halDocTranslated = kokua(hyperDoc, kokua.mt('hal'));
   t.deepEqual(halDoc._links.curies, halDocTranslated._links.curies);
+
+  const noCuriesHyper = {
+    "h:head" : {
+      "title" : "yeah"
+    },
+    "something": 23,
+    "other" : "lorem"
+  };
+  const halDocTwo = kokua (noCuriesHyper, kokua.mt('hal'));
+  t.deepEqual(noCuriesHyper, noCuriesHyper);
 });
