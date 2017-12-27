@@ -50,3 +50,8 @@ test('Top-Level H:refs', async t => {
   delete noHrefsHyper["h:head"];
   t.deepEqual(halDocTwo, noHrefsHyper);
 });
+
+test('Top-Level H:link', async t => {
+  const halDocTranslated = kokua(hyperDoc, kokua.mt('hal'));
+  t.deepEqual(halDoc._links, halDocTranslated._links);
+});
