@@ -127,3 +127,4 @@ Temporary Items
 
 .nyc_output
 package-lock.json
+.coveralls.yml
