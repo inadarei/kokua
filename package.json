@@ -16,7 +16,8 @@
     "app-module-path": "^2.1.0",
     "bluebird": "^3.5.0",
     "lodash": "^4.3.0",
-    "metalogger": "*"
+    "metalogger": "*",
+    "traverse": "^0.6.6"
   },
   "devDependencies": {
     "ava": "^0.24.0",
