@@ -27,12 +27,12 @@
     ],
     "department": {
       "name": "Lorem Ipsum",
-      "h:ref": {"about": "http://api.x.io/dep/28374/"},
       "h:link": [{
         "uri": "http://api.x.io/rev/3233",
         "label": "Revenue",
         "rel": ["ea:revenue"]
-      }]
+      }],
+      "h:ref": {"about": "http://api.x.io/dep/28374/"}
     }
   },
   "ea:order": [

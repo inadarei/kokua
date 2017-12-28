@@ -117,7 +117,22 @@ test('Hyper to Hal: Top-Level H:link', t => {
   const translatedHal3 = representor2.translate();
 
   t.same(translatedHal3, simpleHalWithLink,
-    "Direct test of HAL plugin to verify top h:link translation in the absense of other links");
+    "Direct test of HAL plugin to verify top h:link translation in the absense " +
+    "of other links and correct translation of h:link without a rel");
 
   t.end();
 });
+
+test('Hyper to HAL: h:link must have a rel property', t=> {
+  const brokenHyper = { // h:link must have a rel property
+    "h:link" : [{ "uri" : "http://example.com/api", "label" : "selfie" }],
+    "something" : 23, "other" : "lorem"
+  };
+  const expectedError = /A rel property is required on any h:link.*/;
+  t.throws( () => {
+    const representor = halTranslator(brokenHyper);
+    representor.translate();
+  }, expectedError, "Accidentally indicating h:link without a rel should throw an error");
+
+  t.end();
+})
