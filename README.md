@@ -23,7 +23,7 @@ such as:
   let uberDoc = kokua(hyperDoc, kokua.mt('uber'));
 ```
 
-### Implementation Status
+## Implementation Status
 
 1. Hyper to HAL: 100%
     - Reverse: 0%
