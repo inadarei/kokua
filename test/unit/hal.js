@@ -146,7 +146,7 @@ test('Hyper to Hal: Top-Level H:link', t => {
   t.end();
 });
 
-test('Hyper to HAL: top-level h:link must be an array', t=> {
+test('Hyper to HAL: h:link must be an array', t=> {
   const brokenHyper = { // h:link must have a rel property
     "something" : 23, "other" : "lorem",
     "lorem" : { "h:link" : {}}
@@ -156,6 +156,16 @@ test('Hyper to HAL: top-level h:link must be an array', t=> {
     const representor = halTranslator(brokenHyper);
     representor.translate();
   }, expectedError, "Accidentally indicating non-array h:link should throw an error");
+
+  const brokenHyper2 = { // h:link must have a rel property
+    "something" : 23, "other" : "lorem",
+    "h:link" : {}
+  };
+  const expectedError2 = /h:link must be an array, instead received.*/;
+  t.throws( () => {
+    const representor = halTranslator(brokenHyper2);
+    representor.translate();
+  }, expectedError2, "Accidentally indicating non-array, top-level h:link should throw an error");
 
   t.end();
 });
