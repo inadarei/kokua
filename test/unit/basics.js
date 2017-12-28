@@ -11,7 +11,7 @@ test('mt() function', t => {
 
   for (const prop in mediatypes) {
     if (mediatypes.hasOwnProperty(prop)) {
-      t.equal(kokua.mt(prop), mediatypes[prop]);
+      t.equal(kokua.mt(prop), mediatypes[prop], `${prop} identified properly`);
     }
   }
 
@@ -20,8 +20,10 @@ test('mt() function', t => {
 });
 
 test('isSupportedMediaType()', t => {
-  t.equal(kokua.isSupportedMediaType('application/hal+json'), true);
-  t.equal(kokua.isSupportedMediaType('uber'), false);
+  t.equal(kokua.isSupportedMediaType('application/hal+json'),
+    true, 'a proper media string is supported');
+  t.equal(kokua.isSupportedMediaType('uber'),
+    false, 'shortcut like "uber" is not a media type');
   t.end();
 });
 
@@ -50,6 +52,6 @@ test('constructor accepts strings and objects. Tanslates to basic HAL', t => {
   };
 
   const actualHAL = kokua(JSON.stringify(testHyper), kokua.mt('hal'));
-  t.deepEqual(actualHAL, shouldHAL);
+  t.deepEqual(actualHAL, shouldHAL, 'translated simple HAL matched.');
   t.end();
 });
