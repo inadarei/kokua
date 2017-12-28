@@ -1,7 +1,5 @@
 {
-  "h:head": {
-    "curies": {"ea": "http://example.com/docs/rels/"}
-  },
+  "h:head": {"curies": {"ea": "http://example.com/docs/rels/"}},
   "h:ref": {"self": "/orders", "next": "/orders?page=2"},
   "h:link": [
     {
@@ -15,17 +13,25 @@
   "currentlyProcessing": 14,
   "shippedToday": 20,
   "customerDetails": {
-    "demographic" : {
-      "firstname" : "Lauren",
-      "lastname" : "Ziemann",
-      "age" : "34"
-    },
-    "phoneNumber" : "2020001111",
-    "email" : "foo@example.com",
-    "contact" : {
-      "address" : {
-        "street" : "948 Reece Centers",
-        "city"  : "Grahamburgh"
+    "demographic": {"firstname": "Lauren", "lastname": "Ziemann", "age": "34"},
+    "phoneNumber": "2020001111",
+    "email": "foo@example.com",
+    "contact": {
+      "address": {"street": "948 Reece Centers", "city": "Grahamburgh"}
+    }
+  },
+  "sales": {
+    "agents": [
+      {"name": "Foster Okuneva", "h:ref": {"about": "http://api.x.io/u/1234"}},
+      {"name": "Albin Osinski", "h:ref": {"about": "http://api.x.io/u/5678"}}
+    ],
+    "department": {
+      "name": "Lorem Ipsum",
+      "h:ref": {"about": "http://api.x.io/dep/28374/"},
+      "h:link": {
+        "uri": "http://api.x.io/rev/3233",
+        "label": "Revenue",
+        "rel": ["ea:revenue"]
       }
     }
   },

@@ -18,17 +18,31 @@
   "currentlyProcessing": 14,
   "shippedToday": 20,
   "customerDetails": {
-    "demographic" : {
-      "firstname" : "Lauren",
-      "lastname" : "Ziemann",
-      "age" : "34"
-    },
-    "phoneNumber" : "2020001111",
-    "email" : "foo@example.com",
-    "contact" : {
-      "address" : {
-        "street" : "948 Reece Centers",
-        "city"  : "Grahamburgh"
+    "demographic": {"firstname": "Lauren", "lastname": "Ziemann", "age": "34"},
+    "phoneNumber": "2020001111",
+    "email": "foo@example.com",
+    "contact": {
+      "address": {"street": "948 Reece Centers", "city": "Grahamburgh"}
+    }
+  },
+  "sales": {
+    "_embedded": {
+      "agents": [
+        {
+          "name": "Foster Okuneva",
+          "_links": {"about": {"href": "http://api.x.io/u/1234"}}
+        },
+        {
+          "name": "Albin Osinski",
+          "_links": {"about": {"href": "http://api.x.io/u/5678"}}
+        }
+      ],
+      "department": {
+        "name": "Lorem Ipsum",
+        "_links": {
+          "about": {"href": "http://api.x.io/dep/28374/"},
+          "ea:revenue": {"href": "http://api.x.io/rev/3233", "title": "Revenue"}
+        }
       }
     }
   },
