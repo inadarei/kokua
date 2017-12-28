@@ -4,7 +4,8 @@
 
   [![NPM Version][npm-image]][npm-url]
   [![Build][travis-image]][travis-url]
-  [![Test Coverage][coveralls-image]][coveralls-url]  
+  [![Codecov][codecov-image]][codecov-url]    
+  [![Test Coverage][coveralls-image]][coveralls-url]
 
 <!-- Pronounciation: http://hawaiian-words.com/ -->
 
@@ -91,5 +92,7 @@ Lines        : 100% ( 127/127 )
 [npm-url]: https://npmjs.org/package/kokua
 [travis-image]: https://img.shields.io/travis/inadarei/kokua/master.svg?label=Build
 [travis-url]: https://travis-ci.org/inadarei/kokua
+[codecov-image]: https://codecov.io/gh/inadarei/kokua/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/inadarei/kokua
 [coveralls-image]: https://img.shields.io/coveralls/inadarei/kokua/master.svg
 [coveralls-url]: https://coveralls.io/r/inadarei/kokua?branch=master
