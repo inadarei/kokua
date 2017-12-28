@@ -40,6 +40,21 @@ test('Hyper to Hal: Curries', async t => {
     "The case of not having curies handled gracefully");
 });
 
+test('Hyper to Hal: Broken Currie Test', t=> {
+  const brokenHyper = { // h:link must be an array
+    "h:head" : {
+      "curies" : "this is a broken currie",
+    },
+    "something" : 23, "other" : "lorem"
+  };
+  const expectedError = /.*?curies must be an object, instead received:.*/;
+  t.throws( () => {
+    const representor = halTranslator(brokenHyper);
+    representor.translate();
+  }, expectedError, "Invalid CURIE should throw an error");
+  t.end();
+});
+
 test('Hyper to Hal: Top-Level H:refs', t => {
   const halDocTranslated = kokua(hyperDoc, kokua.mt('hal'));
   t.deepEqual(halDoc._links.next, halDocTranslated._links.next,
