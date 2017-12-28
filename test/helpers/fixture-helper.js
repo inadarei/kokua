@@ -3,7 +3,7 @@ const fixtures = require('path').join(__dirname, '../fixtures');
 const fs = require('fs');
 const path = require('path');
 
-const exports = module.exports = {};
+exports = module.exports = {};
 
 exports.loadFixture = async function(name, cb) {
   const pathToFixture = path.join(fixtures, "/", name);

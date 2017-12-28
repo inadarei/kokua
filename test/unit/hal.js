@@ -1,27 +1,26 @@
-const test        = require('ava');
+const test = require('blue-tape');
 const log         = require('metalogger')();
 const kokua       = require ('../../lib/kokua');
 const loadFixture = require('../helpers/fixture-helper').loadFixture;
 
 let halDoc, hyperDoc;
 
-test.before(async t => {
-  // This runs before all tests
+async function setup() {
   halDoc = await loadFixture('hal.json');
   halDoc = JSON.parse(halDoc);
   // Note: loaded fixtures are string, not objects, but Kokua can handle it
   hyperDoc = await loadFixture('hal-hyper.json');
-});
+}
 
-test.only('Full test', async t => {
+
+test('Hyper to Hal: Full test', async t => {
+  await setup();
   const halDocTranslated = kokua(hyperDoc, kokua.mt('hal'));
-  //log.info("original : ", halDoc);
-  log.info("new: ", halDocTranslated);
-  t.pass("Success");
-  //t.deepEqual(halDoc, halDocTranslated);
+  // log.info("TRANSLATED : ", halDocTranslated);
+  t.same(halDoc, halDocTranslated);
 });
 
-test('Curries', async t => {
+test('Hyper to Hal: Curries', async t => {
   const halDocTranslated = kokua(hyperDoc, kokua.mt('hal'));
   t.deepEqual(halDoc._links.curies, halDocTranslated._links.curies);
 
@@ -37,7 +36,7 @@ test('Curries', async t => {
   t.deepEqual(halDocTwo, noCuriesHyper);
 });
 
-test('Top-Level H:refs', async t => {
+test('Hyper to Hal: Top-Level H:refs', t => {
   const halDocTranslated = kokua(hyperDoc, kokua.mt('hal'));
   t.deepEqual(halDoc._links.next, halDocTranslated._links.next);
   t.deepEqual(halDoc._links.self, halDocTranslated._links.self);
@@ -52,9 +51,11 @@ test('Top-Level H:refs', async t => {
   const halDocTwo = kokua (noHrefsHyper, kokua.mt('hal'));
   delete noHrefsHyper["h:head"];
   t.deepEqual(halDocTwo, noHrefsHyper);
+  t.end();
 });
 
-test('Top-Level H:link', async t => {
+test('Hyper to Hal: Top-Level H:link', t => {
   const halDocTranslated = kokua(hyperDoc, kokua.mt('hal'));
   t.deepEqual(halDoc._links, halDocTranslated._links);
+  t.end();
 });

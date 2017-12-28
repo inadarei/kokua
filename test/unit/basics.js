@@ -1,9 +1,5 @@
-const test = require('ava');
+const test = require('blue-tape');
 const kokua = require ('../../lib/kokua');
-
-// test('foo', t => {
-//  t.pass();
-// });
 
 test('mt() function', t => {
   const mediatypes = {
@@ -15,25 +11,28 @@ test('mt() function', t => {
 
   for (const prop in mediatypes) {
     if (mediatypes.hasOwnProperty(prop)) {
-      t.is(kokua.mt(prop), mediatypes[prop]);
+      t.equal(kokua.mt(prop), mediatypes[prop]);
     }
   }
 
-  t.is(kokua.mt('non-existent-prop'), null);
+  t.equal(kokua.mt('non-existent-prop'), null);
+  t.end();
 });
 
 test('isSupportedMediaType()', t => {
-  t.is(kokua.isSupportedMediaType('application/hal+json'), true);
-  t.is(kokua.isSupportedMediaType('uber'), false);
+  t.equal(kokua.isSupportedMediaType('application/hal+json'), true);
+  t.equal(kokua.isSupportedMediaType('uber'), false);
+  t.end();
 });
 
 test('constructor throws an error for unsupported media types', t => {
 
-  const error = t.throws(() => {
+  const expectedErr = /Kokua representor doesn't yet support 'non-existent-media-type' media type./;
+  t.throws(() => {
     kokua({}, 'non-existent-media-type');
-  }, Error);
+  }, expectedErr);
 
-  t.is(error.message, 'Kokua representor doesn\'t yet support \'non-existent-media-type\' media type.');
+  t.end();
 });
 
 test('constructor accepts strings and objects. Tanslates to basic HAL', t => {
@@ -52,4 +51,5 @@ test('constructor accepts strings and objects. Tanslates to basic HAL', t => {
 
   const actualHAL = kokua(JSON.stringify(testHyper), kokua.mt('hal'));
   t.deepEqual(actualHAL, shouldHAL);
+  t.end();
 });
