@@ -1,6 +1,7 @@
 const test = require('blue-tape');
 const log         = require('metalogger')();
 const kokua       = require ('../../lib/kokua');
+const halPlugin   = require('../../lib/plugins/hal');
 const loadFixture = require('../helpers/fixture-helper').loadFixture;
 
 let halDoc, hyperDoc;
