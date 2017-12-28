@@ -91,6 +91,30 @@ test('Hyper to Hal: Top-Level H:refs', t => {
   t.end();
 });
 
+test('Hyper to HAL: h:ref must be an object', t=> {
+  const brokenHyper = { // h:link must have a rel property
+    "something" : 23, "other" : "lorem",
+    "h:ref" : ["broken"]
+  };
+  const expectedError = /h:ref must be a JSON object, instead received.*/;
+  t.throws( () => {
+    const representor = halTranslator(brokenHyper);
+    representor.translate();
+  }, expectedError, "Accidentally indicating non-object h:ref should throw an error");
+
+  const brokenHyper2 = { // h:link must have a rel property
+    "something" : 23, "other" : "lorem",
+    "lorem" : { "h:ref" : ["broken"]}
+  };
+  const expectedError2 = /h:ref must be a JSON object, instead received.*/;
+  t.throws( () => {
+    const representor = halTranslator(brokenHyper2);
+    representor.translate();
+  }, expectedError2, "Accidentally indicating non-object h:ref should throw an error");
+
+  t.end();
+});
+
 test('Hyper to Hal: Top-Level H:link', t => {
   const halDocTranslated = kokua(hyperDoc, kokua.mt('hal'));
   t.deepEqual(halDoc._links, halDocTranslated._links);
@@ -117,8 +141,21 @@ test('Hyper to Hal: Top-Level H:link', t => {
   const translatedHal3 = representor2.translate();
 
   t.same(translatedHal3, simpleHalWithLink,
-    "Direct test of HAL plugin to verify top h:link translation in the absense " +
-    "of other links and correct translation of h:link without a rel");
+    "Direct test of HAL plugin to verify top h:link translation in the absense of other links");
+
+  t.end();
+});
+
+test('Hyper to HAL: top-level h:link must be an array', t=> {
+  const brokenHyper = { // h:link must have a rel property
+    "something" : 23, "other" : "lorem",
+    "lorem" : { "h:link" : {}}
+  };
+  const expectedError = /h:link must be an array, instead received.*/;
+  t.throws( () => {
+    const representor = halTranslator(brokenHyper);
+    representor.translate();
+  }, expectedError, "Accidentally indicating non-array h:link should throw an error");
 
   t.end();
 });
@@ -135,4 +172,4 @@ test('Hyper to HAL: h:link must have a rel property', t=> {
   }, expectedError, "Accidentally indicating h:link without a rel should throw an error");
 
   t.end();
-})
+});
