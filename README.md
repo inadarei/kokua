@@ -23,6 +23,38 @@ such as:
   let uberDoc = kokua(hyperDoc, kokua.mt('uber'));
 ```
 
+### Advanced Example
+
+```Javascript
+
+  const hyperDoc = const hyper = {
+    "h:head": {"curies": {"ea": "http://example.com/docs/rels/"}},
+    "h:ref": {"self": "/orders", "next": "/orders?page=2"},
+    "currentlyProcessing": 14, "shippedToday": 20,
+    "ea:order": [
+      {
+        "h:ref": {
+          "self": "/orders/123",
+          "ea:basket": "/baskets/98712",
+          "ea:customer": "/customers/7809"
+        },
+        "total": 30, "currency": "USD", "status": "shipped"
+      },
+      {
+        "h:ref": {
+          "self": "/orders/123",
+          "ea:basket": "/baskets/98712",
+          "ea:customer": "/customers/124234"
+        },
+        "total": 123, "currency": "USD", "status": "pending"
+      }
+    ]
+  };
+
+  const kokua = require("kokua");
+  let uberDoc = kokua(hyperDoc, kokua.mt('uber'));
+```
+
 ## Implementation Status
 
 1. Hyper to HAL: 100%
