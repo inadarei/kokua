@@ -26,15 +26,15 @@ such as:
 ### Implementation Status
 
 1. Hyper to HAL: 100%
-  - Reverse: 0%
+    - Reverse: 0%
 2. Hyper to UBER: 0%
-  - Reverse: 0%
+    - Reverse: 0%
 3. Hyper to Siren: 0%
-  - Reverse: 0%
+    - Reverse: 0%
 4. Hyper to Collection+JSON: 0%
-  - Reverse: 0%
+    - Reverse: 0%
 5. Hyper to JSONAPI: 0%
-  - Reverse: 0%
+    - Reverse: 0%
 
 ### Test Coverage:
 
