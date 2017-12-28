@@ -2,6 +2,8 @@
 
 > Kōkua (Hawaiian) - help, aid, assistance
 
+  [![Build][travis-image]][travis-url]
+
 <!-- Pronounciation: http://hawaiian-words.com/ -->
 
 Kōkua is an implementation of the [Representor](https://github.com/the-hypermedia-project/charter#representor-pattern) pattern, written
@@ -82,3 +84,7 @@ Lines        : 100% ( 127/127 )
 ## License
 
 [MIT](LICENSE)
+
+
+[travis-image]: https://img.shields.io/travis/inadarei/kokua/master.svg?label=Build
+[travis-url]: https://travis-ci.org/inadarei/kokua
