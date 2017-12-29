@@ -21,7 +21,11 @@ test('Hyper to Siren: Top-Level Properties', async t => {
   st.processProperties();
   const docTranslated = st.newDoc;
 
-  const expected = {"orderNumber": 42, "itemCount": 3, "status": "pending"};
+  const expected = {
+    "properties": {
+      "orderNumber": 42, "itemCount": 3, "status": "pending"
+    }, "class": [ "siren-types:order" ]
+  };
   t.same(docTranslated, expected, "Converted properly");
 });
 
@@ -56,4 +60,17 @@ test('Hyper to Siren: Top-Level Links', async t => {
     }
   ];
   t.same(docTranslated.actions, expected, "Converted properly");
+});
+
+test.skip('Hyper to Siren: Process Entities', async t => {
+  await setup();
+
+  const st = sirenTranslator(hyperDoc);
+  st.processEntities();
+  const docTranslated = st.newDoc;
+
+  log.info("tr", docTranslated);
+
+  //const expected = {"orderNumber": 42, "itemCount": 3, "status": "pending"};
+  //t.same(docTranslated, expected, "Converted properly");
 });
