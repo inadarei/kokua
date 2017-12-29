@@ -1,0 +1,92 @@
+{
+  "h:head": {
+    "curies": {
+      "cj": "http://amundsen.com/media-types/collection/format/#objects"
+    }
+  },
+  "h:ref": {
+    "self": "http://example.org/friends/",
+    "feed": "http://example.org/friends/rss"
+  },
+  "cj:items": [
+    {
+      "h:ref": {"self": "http://example.org/friends/jdoe"},
+      "cj:data": [
+        {"full-name": "J. Doe", "h:label": "Full Name"},
+        {"email": "jdoe@example.org", "h:label": "E-Mail"}
+      ],
+      "h:link": [
+        {
+          "rel": ["blog"],
+          "uri": "http://examples.org/blogs/jdoe",
+          "h:label": "Blog"
+        },
+        {
+          "rel": ["avatar"],
+          "uri": "http://examples.org/images/jdoe",
+          "h:label": "Avatar",
+          "embed": "image/*"
+        }
+      ]
+    },
+    {
+      "h:ref": {"self": "http://example.org/friends/msmith"},
+      "cj:data": [
+        {"full-name": "M. Smith", "h:label": "Full Name"},
+        {"email": "msmith@example.org", "h:label": "E-Mail"}
+      ],
+      "h:link": [
+        {
+          "rel": ["blog"],
+          "uri": "http://examples.org/blogs/msmith",
+          "h:label": "Blog"
+        },
+        {
+          "rel": ["avatar"],
+          "uri": "http://examples.org/images/msmith",
+          "h:label": "Avatar",
+          "embed": "image/*"
+        }
+      ]
+    },
+    {
+      "h:ref": {"self": "http://example.org/friends/rwilliams"},
+      "cj:data": [
+        {"full-name": "R. Williams", "h:label": "Full Name"},
+        {"email": "rwilliams@example.org", "h:label": "E-Mail"}
+      ],
+      "h:link": [
+        {
+          "rel": ["blog"],
+          "uri": "http://examples.org/blogs/rwilliams",
+          "h:label": "Blog"
+        },
+        {
+          "rel": ["avatar"],
+          "uri": "http://examples.org/images/rwilliams",
+          "h:label": "Avatar",
+          "embed": "image/*"
+        }
+      ]
+    }
+  ],
+  "h:link": [
+    {
+      "rel": "search",
+      "uri": "http://example.org/friends/search",
+      "h:label": "Search",
+      "fields": {"search": {}}
+    },
+    {
+      "rel": "search",
+      "uri": "http://example.org/friends/search",
+      "h:label": "Search",
+      "fields": {
+        "full-name": {"h:label": "Full Name"},
+        "email": {"h:label": "Email"},
+        "blog": {"h:label": "Blog"},
+        "avatar": {"h:label": "Avatar"}
+      }
+    }
+  ]
+}
