@@ -1,0 +1,45 @@
+{
+  "h:head": {
+    "curies": {
+        "siren-actions" : "https://github.com/kevinswiber/siren?fake-action=",
+        "siren-types" : "https://github.com/kevinswiber/siren?fake-type="
+      }
+  },
+  "h:type" : ["siren-types:order"],
+  "h:ref": {
+    "self": "http://api.x.io/orders/42",
+    "previous": "http://api.x.io/orders/41",
+    "next": "http://api.x.io/orders/43"
+  },
+  "h:link": [
+    {
+      "rel": ["siren-actions:add-item"],
+      "h:label" : "Add Item",
+      "uri": "http://api.x.io/orders/42/items",
+      "action": "append",
+      "contentType": "application/x-www-form-urlencoded",
+      "fields": {
+        "orderNumber": {"type": "hidden", "default": "42"},
+        "productCode": {},
+        "quantity": {"type": "number"}
+      }
+    }
+  ],
+  "orderNumber": 42,
+  "itemCount": 3,
+  "status": "pending",
+  "items": [
+    {
+      "h:type": ["items", "collection"],
+      "h:ref": {
+        "http://x.io/rels/order-items": "http://api.x.io/orders/42/items"
+      }
+    },
+    {
+      "customerId": "pj123",
+      "name": "Peter Joseph",
+      "h:type": ["info", "customer"],
+      "h:ref": {"self": "http://api.x.io/customers/pj123"}
+    }
+  ]
+}

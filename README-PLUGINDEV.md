@@ -6,10 +6,15 @@ Typical structure of a plugin looks like the following:
 const log      = require("metalogger")();
 const _        = require("lodash");
 const traverse = require("traverse");
+const hutil    = require("./hutil");
 
 class YourNewPlugin {
   constructor(message) {
-    this.doc = message;
+    if (typeof message !== 'object') {
+      this.doc = JSON.parse(message);
+    } else {
+      this.doc = message;
+    }
     this.newDoc = {};
   }
 
@@ -42,3 +47,5 @@ const formats = {
 
 };
 ```
+
+Last but not least: obviously a plugin should be fully covered with tests.
