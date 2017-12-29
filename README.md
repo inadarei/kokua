@@ -92,7 +92,7 @@ Lines        : 100% ( 127/127 )
 
 If you are interested in developing a new plugin to implement translation to a
 hypermedia format that is not yet implemented, please refer to
-[README-PLUGINDEV](README-PLUGINDEV)
+[README-PLUGINDEV](README-PLUGINDEV.md)
 
 [npm-image]: https://img.shields.io/npm/v/kokua.svg
 [npm-url]: https://npmjs.org/package/kokua
