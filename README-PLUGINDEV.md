@@ -20,6 +20,7 @@ class YourNewPlugin {
 
     return this.newDoc;
   }
+}
 
 module.exports = (doc) => {
   const representor = new YourNewPlugin(doc);
