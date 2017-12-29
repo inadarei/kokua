@@ -68,25 +68,14 @@ Please see the official specification for [Hyper](https://github.com/inadarei/hy
 
 1. Hyper to HAL: 100%
     - Reverse: 0%
-2. Hyper to UBER: 0%
+1. Hyper to Siren: 70%
     - Reverse: 0%
-3. Hyper to Siren: 0%
+1. Hyper to UBER: 0%
     - Reverse: 0%
-4. Hyper to Collection+JSON: 0%
+1. Hyper to Collection+JSON: 0%
     - Reverse: 0%
-5. Hyper to JSONAPI: 0%
+1. Hyper to JSONAPI: 0%
     - Reverse: 0%
-
-### Test Coverage:
-
-```
-============ Coverage summary ============
-Statements   : 99.26% ( 135/136 )
-Branches     : 98.61% ( 71/72 )
-Functions    : 100% ( 19/19 )
-Lines        : 100% ( 127/127 )
-===========================================
-```
 
 ### Plugin Development
 
