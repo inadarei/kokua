@@ -84,9 +84,11 @@ Lines        : 100% ( 127/127 )
 ===========================================
 ```
 
-## License
+### Plugin Development
 
-[MIT](LICENSE)
+If you are interested in developing a new plugin to implement translation to a
+hypermedia format that is not yet implemented, please refer to
+[README-PLUGINDEV](README-PLUGINDEV)
 
 [npm-image]: https://img.shields.io/npm/v/kokua.svg
 [npm-url]: https://npmjs.org/package/kokua
