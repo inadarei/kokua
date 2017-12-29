@@ -28,6 +28,10 @@ such as:
   let uberDoc = kokua(hyperDoc, kokua.mt('uber'));
 ```
 
+where the first argument to a `kokua()` call is a JSON document formatted as a Hyper document, and the second argument is the name of a supported media-type that we want the message to be translated to.
+
+Please see the official specification for [Hyper](https://github.com/inadarei/hyper) media type, for more details about the format.
+
 ### Advanced Example
 
 ```Javascript
