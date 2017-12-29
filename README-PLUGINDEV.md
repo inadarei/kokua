@@ -27,7 +27,7 @@ module.exports = (doc) => {
 };
 ```
 
-To add the new implementation to Kokua, a corresponding setting should be
+To add a new implementation to Kokua, a corresponding setting should be
 added to the list of supported plugins in lib/kokua.js:
 
 ```javascript
