@@ -61,8 +61,8 @@ Please see the official specification for [Hyper](https://github.com/inadarei/hy
   };
 
   const kokua = require("kokua");
-  let uberDoc = kokua(hyperDoc, kokua.mt('hal'));
-  let uberDoc = kokua(hyperDoc, kokua.mt('siren'));
+  let halDoc = kokua(hyperDoc, kokua.mt('hal'));
+  let sirenDoc = kokua(hyperDoc, kokua.mt('siren'));
 ```
 
 ## Implementation Status
