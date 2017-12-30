@@ -1,3 +1,6 @@
+/**
+ * Tests that verify accurace of Hyper -> HAL conversion
+ */
 const test          = require('blue-tape');
 const log           = require('metalogger')();
 const kokua         = require ('../../lib/kokua');

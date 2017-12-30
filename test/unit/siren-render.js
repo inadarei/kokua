@@ -1,3 +1,6 @@
+/**
+ * Tests that verify accurace of Hyper -> Siren conversion
+ */
 const test          = require('blue-tape');
 const log           = require('metalogger')();
 const kokua         = require ('../../lib/kokua');
@@ -8,7 +11,7 @@ const loadFixture   = require('../helpers/fixture-helper').loadFixture;
 let sirenDoc, hyperDoc;
 
 async function setup() {
-  sirenDoc = await loadFixture('siren.json');
+  sirenDoc = await loadFixture('siren-generated.json');
   sirenDoc = JSON.parse(sirenDoc);
   // Note: loaded fixtures are string, not objects, but Kokua can handle it
   hyperDoc = await loadFixture('siren-hyper.json');
@@ -62,15 +65,21 @@ test('Hyper to Siren: Top-Level Links', async t => {
   t.same(docTranslated.actions, expected, "Converted properly");
 });
 
-test.skip('Hyper to Siren: Process Entities', async t => {
+test('Hyper to Siren: Process Entities', async t => {
   await setup();
 
   const st = sirenTranslator(hyperDoc);
   st.processEntities();
   const docTranslated = st.newDoc;
 
-  log.info("tr", docTranslated);
+  const expected = sirenDoc.entities;
 
-  //const expected = {"orderNumber": 42, "itemCount": 3, "status": "pending"};
-  //t.same(docTranslated, expected, "Converted properly");
+  t.same(docTranslated.entities, expected, "Converted properly");
+});
+
+test('Hyper to Siren: Full Test', async t => {
+  await setup();
+  const docTranslated = kokua(hyperDoc, kokua.mt('siren'));
+
+  t.same(docTranslated, sirenDoc, "Converted properly");
 });

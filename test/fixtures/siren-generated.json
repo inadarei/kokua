@@ -3,14 +3,25 @@
   "properties": {"orderNumber": 42, "itemCount": 3, "status": "pending"},
   "entities": [
     {
+      "properties": {"entityId": "kfk24", "amount": 999},
+      "rel": ["foo", "bar"],
+      "class": ["foo", "bar"],
+      "links": [{"rel": ["self"], "href": "http://api.x.io/foo/bar"}]
+    },
+    {
       "class": ["items", "collection"],
       "rel": ["http://x.io/rels/order-items"],
       "href": "http://api.x.io/orders/42/items"
     },
     {
-      "class": ["info", "customer"],
-      "rel": ["http://x.io/rels/customer"],
+      "class": ["items", "collection"],
+      "rel": ["http://x.io/rels/discounts"],
+      "href": "http://api.x.io/discounts/52/items"
+    },
+    {
       "properties": {"customerId": "pj123", "name": "Peter Joseph"},
+      "class": ["info", "customer"],
+      "rel": ["info", "customer"],
       "links": [{"rel": ["self"], "href": "http://api.x.io/customers/pj123"}]
     }
   ],

@@ -1,11 +1,11 @@
 {
   "h:head": {
     "curies": {
-        "siren-actions" : "https://github.com/kevinswiber/siren?fake-action=",
-        "siren-types" : "https://github.com/kevinswiber/siren?fake-type="
-      }
+      "siren-actions": "https://github.com/kevinswiber/siren?fake-action=",
+      "siren-types": "https://github.com/kevinswiber/siren?fake-type="
+    }
   },
-  "h:type" : ["siren-types:order"],
+  "h:type": ["siren-types:order"],
   "h:ref": {
     "self": "http://api.x.io/orders/42",
     "previous": "http://api.x.io/orders/41",
@@ -14,7 +14,7 @@
   "h:link": [
     {
       "rel": ["siren-actions:add-item"],
-      "h:label" : "Add Item",
+      "h:label": "Add Item",
       "uri": "http://api.x.io/orders/42/items",
       "action": "append",
       "contentType": "application/x-www-form-urlencoded",
@@ -28,12 +28,26 @@
   "orderNumber": 42,
   "itemCount": 3,
   "status": "pending",
+  "singleSubentity" : {
+    "entityId": "kfk24", "amount": 999,
+    "h:type": ["foo", "bar"],
+    "h:ref": {"self": "http://api.x.io/foo/bar"}
+  },
   "items": [
     {
       "h:type": ["items", "collection"],
       "h:ref": {
         "http://x.io/rels/order-items": "http://api.x.io/orders/42/items"
       }
+    },
+    {
+      "h:type": ["items", "collection"],
+      "h:link": [
+        {
+          "rel": ["http://x.io/rels/discounts"],
+          "uri": "http://api.x.io/discounts/52/items"
+        }
+      ]
     },
     {
       "customerId": "pj123",
