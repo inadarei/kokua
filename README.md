@@ -83,6 +83,14 @@ If you are interested in developing a new plugin to implement translation to a
 hypermedia format that is not yet implemented, please refer to
 [README-PLUGINDEV](README-PLUGINDEV.md)
 
+### Quick-n-dirty benchmark
+
+```BASH
+> node benchmark.js
+Time to convert HAL 10,000 times:  2.572 ms
+Time to convert Siren 10,000 times:  1.42 ms
+```
+
 [npm-image]: https://img.shields.io/npm/v/kokua.svg
 [npm-url]: https://npmjs.org/package/kokua
 [travis-image]: https://img.shields.io/travis/inadarei/kokua/master.svg?label=Build
