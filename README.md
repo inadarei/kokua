@@ -77,12 +77,6 @@ Please see the official specification for [Hyper](https://github.com/inadarei/hy
 1. Hyper to JSONAPI: 0%
     - Reverse: 0%
 
-### Plugin Development
-
-If you are interested in developing a new plugin to implement translation to a
-hypermedia format that is not yet implemented, please refer to
-[README-PLUGINDEV](README-PLUGINDEV.md)
-
 ### Quick-n-dirty benchmark
 
 ```BASH
@@ -90,6 +84,12 @@ hypermedia format that is not yet implemented, please refer to
 Time to convert HAL 10,000 times:  2.572 ms
 Time to convert Siren 10,000 times:  1.42 ms
 ```
+
+### Plugin Development
+
+If you are interested in developing a new plugin to implement translation to a
+hypermedia format that is not yet implemented, please refer to
+[README-PLUGINDEV](README-PLUGINDEV.md)
 
 [npm-image]: https://img.shields.io/npm/v/kokua.svg
 [npm-url]: https://npmjs.org/package/kokua
