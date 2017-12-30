@@ -68,7 +68,7 @@ Please see the official specification for [Hyper](https://github.com/inadarei/hy
 
 1. Hyper to HAL: 100%
     - Reverse: 0%
-1. Hyper to Siren: 70%
+1. Hyper to Siren: 100%
     - Reverse: 0%
 1. Hyper to UBER: 0%
     - Reverse: 0%
