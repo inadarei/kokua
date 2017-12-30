@@ -5,7 +5,7 @@ const path = require('path');
 
 exports = module.exports = {};
 
-exports.loadFixture = async function(name, cb) {
+exports.loadFixture = async function(name) {
   const pathToFixture = path.join(fixtures, "/", name);
 
   return new Promise (function(resolve, reject) {
