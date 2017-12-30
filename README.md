@@ -25,7 +25,7 @@ such as:
 
 ```Javascript
   const kokua = require("kokua");
-  let uberDoc = kokua(hyperDoc, kokua.mt('uber'));
+  let halDoc = kokua(hyperDoc, kokua.mt('hal'));
 ```
 
 where the first argument to a `kokua()` call is a JSON document formatted as a Hyper document, and the second argument is the name of a supported media-type that we want the message to be translated to.
@@ -61,7 +61,8 @@ Please see the official specification for [Hyper](https://github.com/inadarei/hy
   };
 
   const kokua = require("kokua");
-  let uberDoc = kokua(hyperDoc, kokua.mt('uber'));
+  let uberDoc = kokua(hyperDoc, kokua.mt('hal'));
+  let uberDoc = kokua(hyperDoc, kokua.mt('siren'));
 ```
 
 ## Implementation Status
