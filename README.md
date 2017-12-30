@@ -4,7 +4,7 @@
 
   [![NPM Version][npm-image]][npm-url]
   [![Build][travis-image]][travis-url]
-  [![Codecov][codecov-image]][codecov-url]
+  <!-- [![Codecov][codecov-image]][codecov-url] -->
   [![Test Coverage][coveralls-image]][coveralls-url]
 
 <!-- Pronounciation: http://hawaiian-words.com/ -->
