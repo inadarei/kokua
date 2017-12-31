@@ -27,7 +27,7 @@ such as:
 
 ```Javascript
   const kokua = require("kokua");
-  let uberDoc = kokua(hyperDoc, kokua.mt('uber'));
+  let halDoc = kokua(hyperDoc, kokua.mt('hal'));
 ```
 
 where the first argument to a `kokua()` call is a JSON document formatted as a
@@ -78,7 +78,8 @@ the format.
   };
 
   const kokua = require("kokua");
-  let uberDoc = kokua(hyperDoc, kokua.mt('uber'));
+  let halDoc = kokua(hyperDoc, kokua.mt('hal'));
+  let sirenDoc = kokua(hyperDoc, kokua.mt('siren'));
 ```
 
 ## Implementation Status
