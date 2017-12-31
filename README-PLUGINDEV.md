@@ -48,4 +48,16 @@ const formats = {
 };
 ```
 
+### Plugin Implementation File Naming
+
+If you are implementing Hyper -> HAL conversion, and the entry in the formats
+array is `"hal" : "application/hal+json"` then:
+
+1. lib/plugins/hal.js - implements conversion from Hyper to HAL
+1. lib/plugins/hal-reverse.js - implements conversion from HAL to Hyper
+
+In either case the structure of the file is as shown above.
+
+### Tests!
+
 Last but not least: obviously a plugin should be fully covered with tests.
