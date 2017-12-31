@@ -23,14 +23,31 @@ such as:
 
 ## Usage
 
+### Convert a Hyper document to other formats
+
 ```Javascript
   const kokua = require("kokua");
   let uberDoc = kokua(hyperDoc, kokua.mt('uber'));
 ```
 
-where the first argument to a `kokua()` call is a JSON document formatted as a Hyper document, and the second argument is the name of a supported media-type that we want the message to be translated to.
+where the first argument to a `kokua()` call is a JSON document formatted as a
+Hyper document, and the second argument is the name of a supported media-type
+that we want the message to be translated to.
 
-Please see the official specification for [Hyper](https://github.com/inadarei/hyper) media type, for more details about the format.
+### Convert a document in other format to Hyper
+
+```Javascript
+  const kokua = require("kokua");
+  let uberDoc = kokua.parse(halDoc, kokua.mt('hal'));
+```
+
+where the first argument to a `kokua.parse()` call is a JSON document formatted
+in a media type, supported by Kokua, and the second argument is the name of a
+supported media-type that we want the message to be translated from.
+
+Please see the official specification for
+[Hyper](https://github.com/inadarei/hyper) media type, for more details about
+the format.
 
 ### Advanced Example
 
