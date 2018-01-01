@@ -1,0 +1,51 @@
+{
+  "title" : "Example Siren from http://developers.wurl.com/pages/guides/search",
+  "rel": ["properties:http://api.wurl.com/schemas/search_response.json"],
+  "class": ["search"],
+  "properties": {"searchTerms": "funny", "hits": 139, "start": 0},
+  "entities": [
+    {
+      "rel": [
+        "urn:x-resource:schema:https://wurl-api-qa.herokuapp.com/schemas/series.json"
+      ],
+      "class": ["series"],
+      "title": "Comedy Time Dir",
+      "properties": {
+        "id": 371356,
+        "description": "Description of this very funny show....",
+        "channelsRank": 82.7534294465409,
+        "pubDate": "2013-09-13T16:35:43Z",
+        "thumbnails": {
+          "default": {
+            "url": "http://i1.ytimg.com/i/Ug9Iv_KnZwTulS0cEi_mJQ/1.jpg?v=8badd5"
+          }
+        }
+      },
+      "totalEpisodes": 128,
+      "matchesApp": true,
+      "link": "http://www.youtube.com/channel/UCUg9Iv_KnZwTulS0cEi_mJQ/videos"
+    }
+  ],
+  "links": [
+    {"rel": ["self"], "href": "https://api.wurl.com/api/search?q=funny"},
+    {
+      "rel": ["next"],
+      "href": "https://api.wurl.com/api/search?q=funny&start=10"
+    },
+    {"rel" : ["added", "bykokua"], "href" : "http://example.com/foo"}
+  ],
+  "actions": [
+    {
+      "name": "kokua-test-added",
+      "title": "Add Item",
+      "method": "POST",
+      "href": "http://api.x.io/orders/42/items",
+      "type": "application/x-www-form-urlencoded",
+      "fields": [
+        {"name": "orderNumber", "type": "hidden", "value": "42"},
+        {"name": "productCode", "type": "text"},
+        {"name": "quantity", "type": "number"}
+      ]
+    }
+  ]
+}
