@@ -66,7 +66,7 @@ test('Siren to Hyper: Actions', async t => {
         "fields": {
           "orderNumber": {"type": "hidden", "default": "42"},
           "productCode": {"type": "text"},
-          "quantity": {"type": "number"}
+          "quantity": {"type": "number", "label": "Quantity"}
         }
       },
       "uri": "http://api.x.io/orders/42/items",
