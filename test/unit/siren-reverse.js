@@ -52,6 +52,31 @@ test('Siren to Hyper: Links', async t => {
   t.same(docTranslated, expected, "Converted properly");
 });
 
+test('Siren to Hyper: Actions', async t => {
+  await setup();
+
+  const st = sirenTranslator(sirenWurlDoc);
+  st.processActions();
+  const docTranslated = st.newDoc;
+
+  const expected = {"h:link": [
+    {
+      "template": {
+        "contentType": "application/x-www-form-urlencoded",
+        "fields": {
+          "orderNumber": {"type": "hidden", "default": "42"},
+          "productCode": {"type": "text"},
+          "quantity": {"type": "number"}
+        }
+      },
+      "uri": "http://api.x.io/orders/42/items",
+      "label": "Add Item",
+      "action": "append"
+    }
+  ]};
+  t.same(docTranslated, expected, "Converted properly");
+});
+
 test.skip('Siren to Hyper: Process Entities', async t => {
   await setup();
 
