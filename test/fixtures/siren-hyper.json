@@ -17,19 +17,22 @@
       "h:label": "Add Item",
       "uri": "http://api.x.io/orders/42/items",
       "action": "append",
-      "contentType": "application/x-www-form-urlencoded",
-      "fields": {
-        "orderNumber": {"type": "hidden", "default": "42"},
-        "productCode": {},
-        "quantity": {"type": "number"}
+      "template": {
+        "contentType": "application/x-www-form-urlencoded",
+        "fields": {
+          "orderNumber": {"type": "hidden", "default": "42"},
+          "productCode": {},
+          "quantity": {"type": "number"}
+        }
       }
     }
   ],
   "orderNumber": 42,
   "itemCount": 3,
   "status": "pending",
-  "singleSubentity" : {
-    "entityId": "kfk24", "amount": 999,
+  "singleSubentity": {
+    "entityId": "kfk24",
+    "amount": 999,
     "h:type": ["foo", "bar"],
     "h:ref": {"self": "http://api.x.io/foo/bar"}
   },
