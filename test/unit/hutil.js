@@ -14,6 +14,18 @@ test('hutil.actionToHTTP()', (t) => {
   t.end();
 });
 
+test('hutil.httpToAction()', (t) => {
+  const expectedErr = /Unsupported HTTP method/;
+  t.throws(() => {
+    hutil.httpToAction("non-existent");
+  }, expectedErr, 'Trying to convert uknown HTTP method to an action errors-out');
+
+  const action = hutil.httpToAction("PUT");
+  t.same(action, "replace", "Valid HTTP Method properly converts to an action");
+
+  t.end();
+});
+
 test('hutil.verifyPrefix()', (t) => {
   const doc = {
     "h:head": {

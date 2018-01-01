@@ -96,9 +96,22 @@ test.skip('Siren to Hyper: Full Test', async t => {
   t.same(docTranslated, sirenDoc, "Converted properly");
 });
 
-test('Siren to Hyper: passing string version of JSON is fine', t => {
-  const hyperDoc = {"name" : "some object", _links : []};
-  const st = sirenTranslator(JSON.stringify(hyperDoc));
+test('Siren to Hyper: object validation', t => {
+  const sirenDoc = {"name" : "some object", links : []};
+  const st = sirenTranslator(JSON.stringify(sirenDoc));
   t.same(st.doc.name, "some object", "Constructor parses strings to objects");
+
+  const sirenDoc2 = {"class" : "broken"};
+  t.throws(() => {
+    const st = kokua.parse(sirenDoc2, kokua.mt('siren'));
+  }, /In Siren messages 'class' must be an array.*/,
+  "In Siren messages 'class' must be an array");
+
+  const sirenDoc3 = {"links" : "broken"};
+  t.throws(() => {
+    const st = kokua.parse(sirenDoc3, kokua.mt('siren'));
+  }, /In Siren messages 'links' must be an array.*/,
+  "In Siren messages 'links' must be an array");
+
   t.end();
 });
