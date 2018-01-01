@@ -28,7 +28,8 @@
   },
   "scripts": {
     "lint": "eslint lib test",
-    "test": "blue-tape test/**/*.js | tap-diff ",
+    "test": "nyc blue-tape test/**/*.js | tap-diff ",
+    "test-fast": "blue-tape test/**/*.js | tap-diff ",
     "test-debug": "blue-tape test/**/*.js",
     "test-cov": "nyc --check-coverage report test/",
     "coveralls": "npm run test-cov -- && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
