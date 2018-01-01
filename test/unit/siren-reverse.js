@@ -95,3 +95,10 @@ test.skip('Siren to Hyper: Full Test', async t => {
 
   t.same(docTranslated, sirenDoc, "Converted properly");
 });
+
+test('Siren to Hyper: passing string version of JSON is fine', t => {
+  const hyperDoc = {"name" : "some object", _links : []};
+  const st = sirenTranslator(JSON.stringify(hyperDoc));
+  t.same(st.doc.name, "some object", "Constructor parses strings to objects");
+  t.end();
+});
