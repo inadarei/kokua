@@ -87,7 +87,7 @@ the format.
 1. Hyper to HAL: 100%
     - Reverse: 0%
 1. Hyper to Siren: 100%
-    - Reverse: 35%
+    - Reverse: 100%
 1. Hyper to UBER: 0%
     - Reverse: 0%
 1. Hyper to Collection+JSON: 0%

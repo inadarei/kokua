@@ -1,6 +1,9 @@
 /**
  * Tests that verify accurace of Siren -> Hyper conversion
  */
+
+//const test          = require('tap').test;
+
 const test          = require('blue-tape');
 const log           = require('metalogger')();
 const kokua         = require ('../../lib/kokua');
@@ -8,14 +11,20 @@ const sirenTranslator = require('../../lib/plugins/siren-reverse');
 const _             = require('lodash');
 const loadFixture   = require('../helpers/fixture-helper').loadFixture;
 
-let sirenWurlDoc, hyperDoc;
+let sirenWurlDoc, hyperDoc, sirenStdDoc;
 
 async function setup() {
   // src: http://developers.wurl.com/pages/guides/search
   sirenWurlDoc = await loadFixture('siren-wurl.json');
   sirenWurlDoc = JSON.parse(sirenWurlDoc);
+
+  // src: http://developers.wurl.com/pages/guides/search
+  sirenStdDoc = await loadFixture('siren-standard.json');
+  sirenStdDoc = JSON.parse(sirenStdDoc);
+
   // Note: loaded fixtures are string, not objects, but Kokua can handle it
   hyperDoc = await loadFixture('siren-wurl-hyper.json');
+  hyperDoc = JSON.parse(hyperDoc);
 }
 
 test('Siren to Hyper: Top-Level Properties', async t => {
@@ -77,24 +86,27 @@ test('Siren to Hyper: Actions', async t => {
   t.same(docTranslated, expected, "Converted properly");
 });
 
-test.skip('Siren to Hyper: Process Entities', async t => {
+
+test('Siren to Hyper: Process Entities', async t => {
   await setup();
 
-  const st = sirenTranslator(hyperDoc);
+  const st = sirenTranslator(sirenWurlDoc);
   st.processEntities();
   const docTranslated = st.newDoc;
 
-  const expected = sirenDoc.entities;
+  const expected = hyperDoc.entities;
 
   t.same(docTranslated.entities, expected, "Converted properly");
 });
 
-test.skip('Siren to Hyper: Full Test', async t => {
+test('Siren to Hyper: Full Test', async t => {
   await setup();
-  const docTranslated = kokua(hyperDoc, kokua.mt('siren'));
+  const docTranslated = kokua.parse(sirenWurlDoc, kokua.mt('siren'));
 
-  t.same(docTranslated, sirenDoc, "Converted properly");
+  log.info(docTranslated);
+  t.same(docTranslated, hyperDoc, "Converted properly");
 });
+
 
 test('Siren to Hyper: object validation', t => {
   const sirenDoc = {"name" : "some object", links : []};

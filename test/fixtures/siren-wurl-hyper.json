@@ -1,1 +1,61 @@
-{}
+{
+  "searchTerms": "funny",
+  "hits": 139,
+  "start": 0,
+  "h:type": ["search"],
+  "h:label": "Example Siren from http://developers.wurl.com/pages/guides/search",
+  "h:ref": {
+    "self": "https://api.wurl.com/api/search?q=funny",
+    "next": "https://api.wurl.com/api/search?q=funny&start=10"
+  },
+  "h:link": [
+    {"rel": ["added", "bykokua"], "uri": "http://example.com/foo"},
+    {
+      "template": {
+        "contentType": "application/x-www-form-urlencoded",
+        "fields": {
+          "orderNumber": {"type": "hidden", "default": "42"},
+          "productCode": {"type": "text"},
+          "quantity": {"type": "number", "label": "Quantity"}
+        }
+      },
+      "uri": "http://api.x.io/orders/42/items",
+      "label": "Add Item",
+      "action": "append"
+    }
+  ],
+  "entities": [
+    {
+      "id": 371356,
+      "description": "Description of this very funny show....",
+      "channelsRank": 82.7534294465409,
+      "pubDate": "2013-09-13T16:35:43Z",
+      "thumbnails": {
+        "default": {
+          "url": "http://i1.ytimg.com/i/Ug9Iv_KnZwTulS0cEi_mJQ/1.jpg?v=8badd5"
+        }
+      },
+      "h:type": ["series"],
+      "h:label": "Comedy Time Dir"
+    },
+    {
+      "h:type": ["items", "collection", "kokuaAdded"],
+      "h:link": [
+        {
+          "rel": ["http://x.io/rels/discounts", "http://x.io/kokuaAdded"],
+          "uri": "http://api.x.io/discounts/52/items"
+        }
+      ]
+    },
+    {
+      "h:type": ["items", "collection"],
+      "h:ref": {"http://x.io/kokuaAdded": "http://api.x.io/kokuaAdded/876876"}
+    },
+    {
+      "customerId": "pj123",
+      "name": "Peter Joseph",
+      "h:type": ["info", "customer", "kokuaAdded"],
+      "h:ref": {"self": "http://api.x.io/customers/pj123"}
+    }
+  ]
+}

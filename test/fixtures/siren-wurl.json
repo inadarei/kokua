@@ -24,6 +24,22 @@
       "totalEpisodes": 128,
       "matchesApp": true,
       "link": "http://www.youtube.com/channel/UCUg9Iv_KnZwTulS0cEi_mJQ/videos"
+    },
+    {
+      "class": ["items", "collection", "kokuaAdded"],
+      "rel": ["http://x.io/rels/discounts", "http://x.io/kokuaAdded"],
+      "href": "http://api.x.io/discounts/52/items"
+    },
+    {
+      "class": ["items", "collection"],
+      "rel": ["http://x.io/kokuaAdded"],
+      "href": "http://api.x.io/kokuaAdded/876876"
+    },
+    {
+      "properties": {"customerId": "pj123", "name": "Peter Joseph"},
+      "class": ["info", "customer", "kokuaAdded"],
+      "rel": ["info", "customer"],
+      "links": [{"rel": ["self"], "href": "http://api.x.io/customers/pj123"}]
     }
   ],
   "links": [

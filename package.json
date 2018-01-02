@@ -24,12 +24,14 @@
     "eslint": "^4.12.1",
     "i": "^0.3.6",
     "nyc": "^11.3.0",
+    "tap": "^11.0.1",
     "tap-diff": "^0.1.1"
   },
   "scripts": {
     "lint": "eslint lib test",
     "test": "nyc blue-tape test/**/*.js | tap-diff ",
     "test-fast": "blue-tape test/**/*.js | tap-diff ",
+    "test-tap": "tap test/unit/*.js",
     "test-debug": "blue-tape test/**/*.js",
     "test-cov": "nyc --check-coverage report test/",
     "coveralls": "npm run test-cov -- && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
