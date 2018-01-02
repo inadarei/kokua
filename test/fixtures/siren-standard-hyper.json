@@ -1,0 +1,40 @@
+{
+  "orderNumber": 42,
+  "itemCount": 3,
+  "status": "pending",
+  "h:type": ["order"],
+  "h:ref": {
+    "self": "http://api.x.io/orders/42",
+    "previous": "http://api.x.io/orders/41",
+    "next": "http://api.x.io/orders/43"
+  },
+  "h:link": [
+    {
+      "template": {
+        "contentType": "application/x-www-form-urlencoded",
+        "fields": {
+          "orderNumber": {"type": "hidden", "default": "42"},
+          "productCode": {"type": "text"},
+          "quantity": {"type": "number"}
+        }
+      },
+      "uri": "http://api.x.io/orders/42/items",
+      "label": "Add Item",
+      "action": "append"
+    }
+  ],
+  "entities": [
+    {
+      "h:type": ["items", "collection"],
+      "h:ref": {
+        "http://x.io/rels/order-items": "http://api.x.io/orders/42/items"
+      }
+    },
+    {
+      "customerId": "pj123",
+      "name": "Peter Joseph",
+      "h:type": ["info", "customer"],
+      "h:ref": {"self": "http://api.x.io/customers/pj123"}
+    }
+  ]
+}

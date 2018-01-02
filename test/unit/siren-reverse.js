@@ -11,20 +11,23 @@ const sirenTranslator = require('../../lib/plugins/siren-reverse');
 const _             = require('lodash');
 const loadFixture   = require('../helpers/fixture-helper').loadFixture;
 
-let sirenWurlDoc, hyperDoc, sirenStdDoc;
+let sirenWurlDoc, hyperDoc, sirenStdDoc, hyperStdDoc;
 
 async function setup() {
   // src: http://developers.wurl.com/pages/guides/search
   sirenWurlDoc = await loadFixture('siren-wurl.json');
   sirenWurlDoc = JSON.parse(sirenWurlDoc);
 
+  // Note: loaded fixtures are string, not objects, but Kokua can handle it
+  hyperDoc = await loadFixture('siren-wurl-hyper.json');
+  hyperDoc = JSON.parse(hyperDoc);
+
   // src: http://developers.wurl.com/pages/guides/search
   sirenStdDoc = await loadFixture('siren-standard.json');
   sirenStdDoc = JSON.parse(sirenStdDoc);
 
-  // Note: loaded fixtures are string, not objects, but Kokua can handle it
-  hyperDoc = await loadFixture('siren-wurl-hyper.json');
-  hyperDoc = JSON.parse(hyperDoc);
+  hyperStdDoc = await loadFixture('siren-standard-hyper.json');
+  hyperStdDoc = JSON.parse(hyperStdDoc);
 }
 
 test('Siren to Hyper: Top-Level Properties', async t => {
@@ -99,14 +102,15 @@ test('Siren to Hyper: Process Entities', async t => {
   t.same(docTranslated.entities, expected, "Converted properly");
 });
 
-test('Siren to Hyper: Full Test', async t => {
+test('Siren to Hyper: Full Tests', async t => {
   await setup();
   const docTranslated = kokua.parse(sirenWurlDoc, kokua.mt('siren'));
 
-  log.info(docTranslated);
-  t.same(docTranslated, hyperDoc, "Converted properly");
-});
+  t.same(docTranslated, hyperDoc, "WURL Sample Converted properly");
 
+  const docTranslated2 = kokua.parse(sirenStdDoc, kokua.mt('siren'));
+  t.same(docTranslated2, hyperStdDoc, "Standard Sample Converted properly");
+});
 
 test('Siren to Hyper: object validation', t => {
   const sirenDoc = {"name" : "some object", links : []};
