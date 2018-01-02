@@ -15,10 +15,11 @@ in a flexible media type, purpose-designed for the task: [Hyper](http://hyperjso
 and automatically outputs messages in a variety of popular Hypermedia formats
 such as:
 
-1. HAL (application/hal+json)
-2. Siren (application/vnd.siren+json)
-3. Collection+JSON (application/vnd.collection+json)
-4. UBER (application/vnd.uber+json)
+1. [HAL][hal-spec] (application/hal+json)
+2. [Siren][siren-spec] (application/vnd.siren+json)
+3. [Collection+JSON][coljson-spec] (application/vnd.collection+json)
+4. [UBER][uber-spec] (application/vnd.uber+json)
+5. [JSON API][jsonapi-spec] (application/vnd.api+json)
 5. etc.
 
 ## Usage
@@ -84,15 +85,15 @@ the format.
 
 ## Implementation Status
 
-1. Hyper to HAL: 100%
+1. Hyper to [HAL][hal-spec]: 100%
     - Reverse: 0%
-1. Hyper to Siren: 100%
+1. Hyper to [Siren][siren-spec]: 100%
     - Reverse: 100%
-1. Hyper to UBER: 0%
+1. Hyper to [UBER][uber-spec]: 0%
     - Reverse: 0%
-1. Hyper to Collection+JSON: 0%
+1. Hyper to [Collection+JSON][coljson-spec]: 0%
     - Reverse: 0%
-1. Hyper to JSONAPI: 0%
+1. Hyper to [JSONAPI][jsonapi-spec]: 0%
     - Reverse: 0%
 
 ### Quick-n-dirty benchmark
@@ -117,3 +118,8 @@ hypermedia format that is not yet implemented, please refer to
 [codecov-url]: https://codecov.io/gh/inadarei/kokua
 [coveralls-image]: https://img.shields.io/coveralls/inadarei/kokua/master.svg
 [coveralls-url]: https://coveralls.io/r/inadarei/kokua?branch=master
+[hal-spec]: http://stateless.co/hal_specification.html
+[siren-spec]: https://github.com/kevinswiber/siren
+[uber-spec]: http://uberhypermedia.org
+[coljson-spec]: http://amundsen.com/media-types/collection/
+[jsonapi-spec]: http://jsonapi.org/format/
