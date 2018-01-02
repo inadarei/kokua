@@ -15,7 +15,7 @@
     },
     {
       "class": ["items", "collection"],
-      "rel": ["http://x.io/rels/discounts"],
+      "rel": ["http://x.io/rels/discounts", "second"],
       "href": "http://api.x.io/discounts/52/items"
     },
     {

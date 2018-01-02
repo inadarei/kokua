@@ -47,7 +47,7 @@
       "h:type": ["items", "collection"],
       "h:link": [
         {
-          "rel": ["http://x.io/rels/discounts"],
+          "rel": ["http://x.io/rels/discounts", "second"],
           "uri": "http://api.x.io/discounts/52/items"
         }
       ]
