@@ -34,6 +34,9 @@ test('constructor throws an error for unsupported media types', t => {
     kokua({}, 'non-existent-media-type');
   }, expectedErr);
 
+  t.throws(() => {
+    kokua.parse({}, kokua.mt('jsonld'));
+  }, /is not yet implemented/, "Media Type parse not yet implemented");
   t.end();
 });
 
