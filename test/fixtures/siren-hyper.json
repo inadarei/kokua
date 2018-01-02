@@ -48,7 +48,8 @@
       "h:link": [
         {
           "rel": ["http://x.io/rels/discounts", "second"],
-          "uri": "http://api.x.io/discounts/52/items"
+          "uri": "http://api.x.io/discounts/52/items",
+          "label" : "This is testing proper translation of link titles"
         }
       ]
     },

@@ -16,7 +16,8 @@
     {
       "class": ["items", "collection"],
       "rel": ["http://x.io/rels/discounts", "second"],
-      "href": "http://api.x.io/discounts/52/items"
+      "href": "http://api.x.io/discounts/52/items",
+      "title": "This is testing proper translation of link titles"
     },
     {
       "properties": {"customerId": "pj123", "name": "Peter Joseph"},
