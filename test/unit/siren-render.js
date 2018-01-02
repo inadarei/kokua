@@ -2,6 +2,7 @@
  * Tests that verify accurace of Hyper -> Siren conversion
  */
 const test          = require('blue-tape');
+// const test          = require('tap').test;
 const log           = require('metalogger')();
 const kokua         = require ('../../lib/kokua');
 const sirenTranslator = require('../../lib/plugins/siren');
