@@ -3,10 +3,9 @@
  */
 const test          = require('blue-tape');
 // const test          = require('tap').test;
-const log           = require('metalogger')();
+const log           = require('metalogger')(); // eslint-disable-line no-unused-vars
 const kokua         = require ('../../lib/kokua');
 const sirenTranslator = require('../../lib/plugins/siren');
-const _             = require('lodash');
 const loadFixture   = require('../helpers/fixture-helper').loadFixture;
 
 let sirenDoc, hyperDoc;
