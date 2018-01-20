@@ -27,7 +27,7 @@ test('Hyper to Siren: Top-Level Properties', async t => {
 
   const expected = {
     "properties": {
-      "orderNumber": 42, "itemCount": 3, "status": "pending"
+      "orderNumber": 42, "foonull": null, "itemCount": 3, "status": "pending"
     }, "class": [ "order" ]
   };
   t.same(docTranslated, expected, "Converted properly");

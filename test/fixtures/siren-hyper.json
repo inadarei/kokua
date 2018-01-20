@@ -28,6 +28,7 @@
     }
   ],
   "orderNumber": 42,
+  "foonull": null,
   "itemCount": 3,
   "status": "pending",
   "singleSubentity": {
@@ -49,7 +50,7 @@
         {
           "rel": ["http://x.io/rels/discounts", "second"],
           "uri": "http://api.x.io/discounts/52/items",
-          "label" : "This is testing proper translation of link titles"
+          "label": "This is testing proper translation of link titles"
         }
       ]
     },
