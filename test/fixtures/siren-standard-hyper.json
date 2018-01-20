@@ -2,6 +2,7 @@
   "orderNumber": 42,
   "itemCount": 3,
   "status": "pending",
+  "barnull": null,
   "h:type": ["order"],
   "h:ref": {
     "self": "http://api.x.io/orders/42",

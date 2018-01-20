@@ -1,6 +1,11 @@
 {
   "class": ["order"],
-  "properties": {"orderNumber": 42, "itemCount": 3, "status": "pending"},
+  "properties": {
+    "orderNumber": 42,
+    "foonull": null,
+    "itemCount": 3,
+    "status": "pending"
+  },
   "entities": [
     {
       "properties": {"entityId": "kfk24", "amount": 999},

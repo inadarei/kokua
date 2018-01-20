@@ -5,10 +5,9 @@
 //const test          = require('tap').test;
 
 const test          = require('blue-tape');
-const log           = require('metalogger')();
+const log           = require('metalogger')(); // eslint-disable-line no-unused-vars
 const kokua         = require ('../../lib/kokua');
 const sirenTranslator = require('../../lib/plugins/siren-reverse');
-const _             = require('lodash');
 const loadFixture   = require('../helpers/fixture-helper').loadFixture;
 
 let sirenWurlDoc, hyperDoc, sirenStdDoc, hyperStdDoc;
@@ -119,13 +118,13 @@ test('Siren to Hyper: object validation', t => {
 
   const sirenDoc2 = {"class" : "broken"};
   t.throws(() => {
-    const st = kokua.parse(sirenDoc2, kokua.mt('siren'));
+    kokua.parse(sirenDoc2, kokua.mt('siren'));
   }, /In Siren messages 'class' must be an array.*/,
   "In Siren messages 'class' must be an array");
 
   const sirenDoc3 = {"links" : "broken"};
   t.throws(() => {
-    const st = kokua.parse(sirenDoc3, kokua.mt('siren'));
+    kokua.parse(sirenDoc3, kokua.mt('siren'));
   }, /In Siren messages 'links' must be an array.*/,
   "In Siren messages 'links' must be an array");
 

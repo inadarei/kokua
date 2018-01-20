@@ -3,10 +3,9 @@
  */
 const test          = require('blue-tape');
 // const test          = require('tap').test;
-const log           = require('metalogger')();
+const log           = require('metalogger')(); // eslint-disable-line no-unused-vars
 const kokua         = require ('../../lib/kokua');
 const sirenTranslator = require('../../lib/plugins/siren');
-const _             = require('lodash');
 const loadFixture   = require('../helpers/fixture-helper').loadFixture;
 
 let sirenDoc, hyperDoc;
@@ -27,7 +26,7 @@ test('Hyper to Siren: Top-Level Properties', async t => {
 
   const expected = {
     "properties": {
-      "orderNumber": 42, "itemCount": 3, "status": "pending"
+      "orderNumber": 42, "foonull": null, "itemCount": 3, "status": "pending"
     }, "class": [ "order" ]
   };
   t.same(docTranslated, expected, "Converted properly");

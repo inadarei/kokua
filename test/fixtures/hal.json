@@ -17,13 +17,15 @@
   },
   "currentlyProcessing": 14,
   "shippedToday": 20,
+  "warnings" : null,
   "customerDetails": {
     "demographic": {"firstname": "Lauren", "lastname": "Ziemann", "age": "34"},
     "phoneNumber": "2020001111",
     "email": "foo@example.com",
     "contact": {
       "address": {"street": "948 Reece Centers", "city": "Grahamburgh"}
-    }
+    },
+    "history" : null
   },
   "sales": {
     "_embedded": {

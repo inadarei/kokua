@@ -2,7 +2,7 @@
  * Tests that verify accurace of Hyper -> HAL conversion
  */
 const test          = require('blue-tape');
-const log           = require('metalogger')();
+const log           = require('metalogger')(); // eslint-disable-line no-unused-vars
 const kokua         = require ('../../lib/kokua');
 const halTranslator = require('../../lib/plugins/hal');
 const loadFixture   = require('../helpers/fixture-helper').loadFixture;

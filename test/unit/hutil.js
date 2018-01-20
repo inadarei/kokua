@@ -1,5 +1,4 @@
 const test = require('blue-tape');
-const kokua = require ('../../lib/kokua');
 const hutil = require ('../../lib/hutil');
 
 test('hutil.actionToHTTP()', (t) => {
