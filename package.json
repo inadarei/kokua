@@ -23,7 +23,7 @@
     "tape": "git://github.com/substack/tape.git#17276d7473f9d98e37bab47ebdddf74ca1931f43",
     "coveralls": "^3.0.0",
     "eslint": "^4.12.1",
-    "nyc": "^11.3.0",
+    "nyc": "^13.0.1",
     "tap-nirvana": "^1.0.7"
   },
   "scripts": {
