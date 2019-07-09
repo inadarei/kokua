@@ -17,7 +17,7 @@
     "lodash": "^4.3.0",
     "metalogger": "^2.1.0",
     "traverse": "^0.6.6",
-    "snyk": "^1.88.1"
+    "snyk": "^1.192.4"
   },
   "devDependencies": {
     "blue-tape": "^1.0.0",
@@ -34,7 +34,8 @@
     "test-cov": "nyc --check-coverage report test/",
     "coveralls": "npm run test-cov -- && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "prepare": "npm run snyk-protect",
+    "prepublish": "npm run snyk-protect"
   },
   "nyc": {
     "per-file": true,
