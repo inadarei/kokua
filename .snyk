@@ -1,8 +1,33 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.12.0
+version: v1.14.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:lodash:20180130':
     - tap-nirvana > lodash:
         patched: '2018-07-03T21:43:34.595Z'
+  SNYK-JS-LODASH-567746:
+    - lodash:
+        patched: '2020-05-05T06:45:00.755Z'
+    - eslint > lodash:
+        patched: '2020-05-05T06:45:00.755Z'
+    - tap-nirvana > lodash:
+        patched: '2020-05-05T06:45:00.755Z'
+    - eslint > inquirer > lodash:
+        patched: '2020-05-05T06:45:00.755Z'
+    - eslint > table > lodash:
+        patched: '2020-05-05T06:45:00.755Z'
+    - nyc > istanbul-lib-instrument > @babel/core > lodash:
+        patched: '2020-05-05T06:45:00.755Z'
+    - nyc > istanbul-lib-instrument > @babel/core > @babel/helper-module-transforms > lodash:
+        patched: '2020-05-05T06:45:00.755Z'
+    - nyc > istanbul-lib-instrument > @babel/core > @babel/helpers > @babel/traverse > lodash:
+        patched: '2020-05-05T06:45:00.755Z'
+    - nyc > istanbul-lib-instrument > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > lodash:
+        patched: '2020-05-05T06:45:00.755Z'
+    - nyc > istanbul-lib-instrument > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-05-05T06:45:00.755Z'
+    - nyc > istanbul-lib-instrument > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-05-05T06:45:00.755Z'
+    - nyc > istanbul-lib-instrument > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-05-05T06:45:00.755Z'
