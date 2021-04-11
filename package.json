@@ -17,7 +17,7 @@
     "lodash": "^4.3.0",
     "metalogger": "^2.1.0",
     "traverse": "^0.6.6",
-    "snyk": "^1.88.1"
+    "snyk": "^1.317.0"
   },
   "devDependencies": {
     "blue-tape": "^1.0.0",
